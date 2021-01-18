@@ -54,14 +54,14 @@ type PushSync struct {
 	unwrap        func(swarm.Chunk)
 	logger        logging.Logger
 	accounting    accounting.Interface
-	pricer        *pricer.Service
+	pricer        pricer.Interface
 	metrics       metrics
 	tracer        *tracing.Tracer
 }
 
 var timeToLive = 5 * time.Second // request time to live
 
-func New(streamer p2p.StreamerDisconnecter, storer storage.Putter, closestPeerer topology.ClosestPeerer, tagger *tags.Tags, unwrap func(swarm.Chunk), logger logging.Logger, accounting accounting.Interface, pricer *pricer.Service, tracer *tracing.Tracer) *PushSync {
+func New(streamer p2p.StreamerDisconnecter, storer storage.Putter, closestPeerer topology.ClosestPeerer, tagger *tags.Tags, unwrap func(swarm.Chunk), logger logging.Logger, accounting accounting.Interface, pricer pricer.Interface, tracer *tracing.Tracer) *PushSync {
 
 	ps := &PushSync{
 		streamer:      streamer,
