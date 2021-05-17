@@ -24,7 +24,7 @@ Our documentation is hosted at https://docs.ethswarm.org.
 
 ## Contributing
 
-Please read the [coding guidelines](CODING.md).
+Please read  the [coding guidelines](CODING.md).
 
 ## Installing
 
